@@ -1,7 +1,7 @@
 import { createContext, useEffect, useReducer } from "react";
 
 const initial_state = {
-    user: localStorage.getItem('user') !== undefined ? JSON.parse(localStorage.getItem('user')): null,
+    user: localStorage.getItem('user') !== null ? JSON.parse(localStorage.getItem('user')) : null,
     loading: false,
     error: null
 }
@@ -9,53 +9,53 @@ const initial_state = {
 export const AuthContext = createContext(initial_state);
 
 const AuthReducer = (state, action) => {
-    switch(action.type){
-        case 'LOGIN_START' :
+    switch (action.type) {
+        case 'LOGIN_START':
             return {
                 user: null,
                 loading: true,
                 error: null
             };
 
-        case 'LOGIN_SUCCESS' :
+        case 'LOGIN_SUCCESS':
             return {
                 user: action.payload,
                 loading: false,
                 error: null
             };
 
-        case 'LOGIN_FAILURE' :
+        case 'LOGIN_FAILURE':
             return {
                 user: null,
                 loading: false,
                 error: action.payload
             };
 
-        case 'REGISTER_SUCCESS' :
+        case 'REGISTER_SUCCESS':
             return {
                 user: null,
                 loading: false,
-                error:true
+                error: true
             };
-        
-        case 'LOGOUT' :
+
+        case 'LOGOUT':
             return {
                 user: null,
                 loading: false,
-                error:true
-            };    
+                error: true
+            };
 
-        default :
+        default:
             return state
     }
 };
 
 
-export const AuthContextProvider = ({children}) => {
+export const AuthContextProvider = ({ children }) => {
     const [state, dispatch] = useReducer(AuthReducer, initial_state)
 
     useEffect(() => {
-       localStorage.setItem('user', JSON.stringify(state.user))
+        localStorage.setItem('user', JSON.stringify(state.user))
     }, [state.user])
 
     return (
@@ -65,7 +65,7 @@ export const AuthContextProvider = ({children}) => {
             error: state.error,
             dispatch,
         }}>
-        {children}
+            {children}
         </AuthContext.Provider>
     );
 }
