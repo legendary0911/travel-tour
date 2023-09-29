@@ -1,10 +1,10 @@
 import React from 'react'
 import './footer.css';
-import { Container, Row, Col, ListGroup, ListGroupItem} from 'reactstrap';
+import { Container, Row, Col, ListGroup, ListGroupItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/images/logo.png';
 
-const quick__links=[
+const quick__links = [
   {
     path: '/home',
     display: 'Home'
@@ -19,7 +19,7 @@ const quick__links=[
   },
 ];
 
-const quick__links2=[
+const quick__links2 = [
   {
     path: '/gallery',
     display: 'Gallery'
@@ -43,9 +43,9 @@ const Footer = () => {
   return (
     <footer className='footer'>
       <Container>
-         <Row>
+        <Row>
           <Col lg='3'>
-             <div className='logo'>
+            <div className='logo'>
               <img src={logo} alt="" />
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
               <div className="social__links d-flex align-items-center gap-4">
@@ -62,13 +62,13 @@ const Footer = () => {
                   <Link to='#'><i class='ri-instagram-line'></i></Link>
                 </span>
               </div>
-             </div>
+            </div>
           </Col>
           <Col lg='3'>
             <h5 className='footer__link-title'>Discover</h5>
             <ListGroup className='footer__quick-links'>
               {
-                quick__links.map((item,index)=> (
+                quick__links.map((item, index) => (
                   <ListGroupItem key={index} className='ps-0 border-0' >
                     <Link to={item.path}>{item.display}</Link>
                   </ListGroupItem>
@@ -77,10 +77,10 @@ const Footer = () => {
             </ListGroup>
           </Col>
           <Col lg='3'>
-          <h5 className='footer__link-title'>Quick links</h5>
+            <h5 className='footer__link-title'>Quick links</h5>
             <ListGroup className='footer__quick-links'>
               {
-                quick__links2.map((item,index)=> (
+                quick__links2.map((item, index) => (
                   <ListGroupItem key={index} className='ps-0 border-0' >
                     <Link to={item.path}>{item.display}</Link>
                   </ListGroupItem>
@@ -89,35 +89,35 @@ const Footer = () => {
             </ListGroup>
           </Col>
           <Col lg='3'>
-          <h5 className='footer__link-title'>Contact</h5>
+            <h5 className='footer__link-title'>Contact</h5>
             <ListGroup className='footer__quick-links'>
-            <ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-3' >
-              <h6 className='mb-0 d-flex align-items-center gap-2'>
-                <span><i class='ri-map-pin-line'></i></span>
-                Address:
-              </h6>
-              <p className='mb-0'>Kolkata, India</p>
+              <ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-3' >
+                <h6 className='mb-0 d-flex align-items-center gap-2'>
+                  <span><i class='ri-map-pin-line'></i></span>
+                  Address:
+                </h6>
+                <p className='mb-0'>Ranchi, India</p>
               </ListGroupItem>
               <ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-3' >
-              <h6 className='mb-0 d-flex align-items-center gap-2'>
-                <span><i class='ri-mail-line'></i></span>
-                Email:
-              </h6>
-              <p className='mb-0'>dev.adtag209@gmail.com</p>
+                <h6 className='mb-0 d-flex align-items-center gap-2'>
+                  <span><i class='ri-mail-line'></i></span>
+                  Email:
+                </h6>
+                <p className='mb-0'>shivvvaam@gmail.com</p>
               </ListGroupItem>
               <ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-3' >
-              <h6 className='mb-0 d-flex align-items-center gap-2'>
-                <span><i class='ri-phone-fill'></i></span>
-                Phone:
-              </h6>
-              <p className='mb-0'>+0123456789</p>
+                <h6 className='mb-0 d-flex align-items-center gap-2'>
+                  <span><i class='ri-phone-fill'></i></span>
+                  Phone:
+                </h6>
+                <p className='mb-0'>+0123456789</p>
               </ListGroupItem>
             </ListGroup>
           </Col>
           <Col lg='12' className='text-center pt-5'>
-            <p className="copyright">Copyright {year}, design and develop by Aditya Agarwal. All rights reserved.</p>
+            <p className="copyright">Copyright {year}, design and develop by Kumar Shivam. All rights reserved.</p>
           </Col>
-         </Row>
+        </Row>
       </Container>
     </footer>
   )
